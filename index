@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Домашня робота №4</title>
+  </head>
+  <body>
+    <script>
+      // 1. Треба реалізувати просту програму з наступними умовами:
+      function userNameCheck() {
+        let userName = prompt("Введіть ваше ім'я:");
+
+        if (userName !== null) {
+          alert(`Hello, ${userName}! How are you?`);
+        } else {
+          alert("Ви не ввели ім'я. Спробуйте ще раз.");
+        }
+      }
+
+      userNameCheck();
+
+      // 2. Дано тризначне число, яке надае користувач, потрибно визначити:
+      function userNumber() {
+        let number = prompt("Введіть тризначне число:");
+
+        let firstNumber = parseInt(number[0]);
+        let secondNumber = parseInt(number[1]);
+        let thirdNumber = parseInt(number[2]);
+
+        if (firstNumber === secondNumber && secondNumber === thirdNumber) {
+          alert("Всі цифри однакові.");
+        } else if (
+          firstNumber === secondNumber ||
+          secondNumber === thirdNumber ||
+          firstNumber === thirdNumber
+        ) {
+          alert("Серед цифр є однакові.");
+        } else {
+          alert("Всі цифри різні.");
+        }
+      }
+
+      userNumber();
+
+      // 3.Портрет користувача
+      function userPortrait() {
+        let yearOfBirth = prompt("Який ваш рік народження?");
+        let city = prompt("В якому місті ви живете?");
+        let favoriteSport = prompt("Який ваш улюблений вид спорту?");
+        let currentYear = +prompt("Який зараз рік?");
+        let age = currentYear - parseInt(yearOfBirth);
+        if (city === "Київ" || city === "Вашингтон" || city === "Лондон") {
+          var country;
+          if (city === "Київ") {
+            country = "України";
+          } else if (city === "Вашингтон") {
+            country = "Сполучених Штатів Америки";
+          } else if (city === "Лондон") {
+            country = "Великої Британії";
+          }
+          alert(`Ти живеш у столиці ${country}!`);
+        } else {
+          alert(`Ти живеш у столиці ${city}!`);
+        }
+
+        alert(`
+        Твій вік: ${age}
+        Твій улюблений вид спорту: ${favoriteSport}
+        `);
+      }
+
+      userPortrait();
+    </script>
+  </body>
+</html>
