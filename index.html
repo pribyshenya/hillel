@@ -24,20 +24,24 @@
       function userNumber() {
         let number = prompt("Введіть тризначне число:");
 
-        let firstNumber = parseInt(number[0]);
-        let secondNumber = parseInt(number[1]);
-        let thirdNumber = parseInt(number[2]);
+        if (number !== null) {
+          let firstNumber = parseInt(number[0]);
+          let secondNumber = parseInt(number[1]);
+          let thirdNumber = parseInt(number[2]);
 
-        if (firstNumber === secondNumber && secondNumber === thirdNumber) {
-          alert("Всі цифри однакові.");
-        } else if (
-          firstNumber === secondNumber ||
-          secondNumber === thirdNumber ||
-          firstNumber === thirdNumber
-        ) {
-          alert("Серед цифр є однакові.");
+          if (firstNumber === secondNumber && secondNumber === thirdNumber) {
+            alert("Всі цифри однакові.");
+          } else if (
+            firstNumber === secondNumber ||
+            secondNumber === thirdNumber ||
+            firstNumber === thirdNumber
+          ) {
+            alert("Серед цифр є однакові.");
+          } else {
+            alert("Всі цифри різні.");
+          }
         } else {
-          alert("Всі цифри різні.");
+          alert("Ви не ввели тризначне число.");
         }
       }
 
@@ -46,9 +50,27 @@
       // 3.Портрет користувача
       function userPortrait() {
         let yearOfBirth = prompt("Який ваш рік народження?");
+        if (yearOfBirth === null) {
+          alert("Шкода, що Ви не захотіли ввести свій рік народження.");
+          return;
+        }
         let city = prompt("В якому місті ви живете?");
+        if (yearOfBirth === null) {
+          alert("Шкода, що Ви не захотіли ввести в якому місті ви живете.");
+          return;
+        }
         let favoriteSport = prompt("Який ваш улюблений вид спорту?");
-        let currentYear = +prompt("Який зараз рік?");
+        if (yearOfBirth === null) {
+          alert(
+            "Шкода, що Ви не захотіли ввести який ваш улюблений вид спорту."
+          );
+          return;
+        }
+        let currentYear = prompt("Який зараз рік?");
+        if (yearOfBirth === null) {
+          alert("Шкода, що Ви не захотіли ввести який зараз рік.");
+          return;
+        }
         let age = currentYear - parseInt(yearOfBirth);
         if (city === "Київ" || city === "Вашингтон" || city === "Лондон") {
           var country;
